@@ -1,0 +1,71 @@
+.funcButton {
+    -fx-background-color: #ff8d00;
+    -fx-background-radius: 0px;
+}
+.funcButton:hover
+{
+    -fx-background-color: #d66b00;
+}
+
+#closeButton:hover
+{
+    -fx-background-color: #d50000;
+}
+* {
+    -fx-background-radius: 0px;
+}
+
+.headerLabel {
+    -fx-alignment: CENTER;
+    -fx-text-fill: white;
+    -fx-font-size: 14pt;
+}
+.TextArea>*
+
+{
+	-fx-font-size: 14pt;
+}
+.backgroundPane {
+    -fx-background-color: #424242;
+    -fx-border-color: #7f7f7f;
+}
+
+#closeButton {
+    -fx-background-color: #424242;
+    -fx-text-fill: white;
+}
+
+.button:hover, .combo-box:hover *, .combo-box-base:hover {
+    -fx-cursor: hand;
+}
+
+#MethodSelector {
+    -fx-background-color: #b5b5b5;
+    -fx-padding: 0px;
+}
+
+#MethodSelector:visited, #MethodSelector:focused {
+    -fx-border-width: 0px;
+}
+
+.combo-box-popup .list-view *
+{
+    -fx-background-color: #c6c6c6;
+}
+.combo-box-popup .list-view .list-cell:filled:hover
+{
+    -fx-background-color: #ff8d00;
+    -fx-text-fill: black;
+}
+
+#MethodSelector .menu-item > .label {
+}
+
+#MethodSelector .menu-item:focused > .label {
+}
+
+.errored
+{
+    -fx-border-color: red;
+    -fx-border-width: 3px;
+}
