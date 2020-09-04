@@ -9,6 +9,24 @@ public class Methods
     public static final String chars = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяabcdefghijklmnopqrstuvwxyz1234567890"; //Алфавит
     //public static final String chars = "абвгґдеєжзиіїйклмнопрстуфхцчшщьюя";
 
+    @ShifMethod(name = "Ускоренный бинарный метод")
+    public String binary(String line, String key, boolean crip) throws IllegalKeyException
+    {
+        try
+        {
+            long x = Long.parseLong(line);
+            String[] parsed = key.split("\\s+");
+            long d = Long.parseLong(parsed[0]);
+            long n = Long.parseLong(parsed[1]);
+            return String.valueOf(Utils.binaryPow(x, d, n));
+        }
+        catch (NumberFormatException e)
+        {
+            throw new IllegalKeyException("Исходная строка должна быть числом.\n" +
+                    "Ключ содержать целочисленные степень и модуль, разделенные пробелом");
+        }
+    }
+
     @ShifMethod(name = "Решето Эратосфена")
     public String eratosfen(String line, String key, boolean crip) throws IllegalKeyException
     {
