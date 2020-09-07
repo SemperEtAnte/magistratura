@@ -3,11 +3,45 @@ package ru.Troshin.CMK;
 import ru.Troshin.CMK.Exceptions.IllegalKeyException;
 import ru.Troshin.CMK.Exceptions.SymbolNotInAlphabetException;
 
+import java.util.Random;
+
 public class Methods
 {
 
     public static final String chars = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяabcdefghijklmnopqrstuvwxyz1234567890"; //Алфавит
-    //public static final String chars = "абвгґдеєжзиіїйклмнопрстуфхцчшщьюя";
+    private static final Random rand = new Random();
+
+    @ShifMethod(name = "Алгоритм Миллера-Рабина")
+    public String millerRabin(String line, String key, boolean crip) throws IllegalKeyException
+    {
+        try
+        {
+            long n = Long.parseLong(line);
+            if (n % 2 == 0)
+            {
+                throw new NumberFormatException();
+            }
+            int[] x = {2, 3, 5, 7};
+            StringBuilder sb = new StringBuilder();
+            for (int i : x)
+            {
+                sb.append("Для x = ").append(i);
+                if (Utils.isPseudoSimple(n, i))
+                {
+                    sb.append(" n - простое\n");
+                }
+                else
+                {
+                    sb.append(" n - составное\n");
+                }
+            }
+            return sb.toString();
+        }
+        catch (NumberFormatException e)
+        {
+            throw new IllegalKeyException("Входная строка должна быть целым нечетным числом n");
+        }
+    }
 
     @ShifMethod(name = "Ускоренный бинарный метод")
     public String binary(String line, String key, boolean crip) throws IllegalKeyException
